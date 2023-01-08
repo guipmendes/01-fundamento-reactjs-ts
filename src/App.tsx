@@ -5,7 +5,21 @@ import { Post } from "./components/Post";
 import styles from "./App.module.css";
 import "./global.css";
 
-const posts = [
+interface PostsProps {
+  id: number;
+  author: {
+    avatarUrl: string;
+    name: string;
+    role: string;
+  };
+  content: {
+    type: 'paragraph' | 'link';
+    content: string
+  }[];
+  publishedAt: Date;
+}
+
+const posts: PostsProps[] = [
   {
     id: 1,
     author: {
